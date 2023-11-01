@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<title>KShop: Add new car</title>
+		<link rel="stylesheet" href="../css/add-new-car.css" />
+	</head>
+	<body>
+		<header><h1>AUTOMOTIVE REPAIR</h1></header>
+		<div class="container">
+			<aside>
+				<div class="menu">
+					<p><b>MENU:</b></p>
+					<p><a href="#">Add a new car</a></p>
+					<p><a href="./car-management.html">Cars management</a></p>
+				</div>
+			</aside>
+			<div class="vr"></div>
+			<main>
+				<form id="car-create-form">
+					<p><b>CAR DETAILS:</b></p>
+					<div class="form-control">
+						<label for="license-plate">License plate</label>
+						<input
+							type="text"
+							name="license-plate"
+							id="license-plate"
+							placeholder="29V7-65366"
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-date">Repair date</label>
+						<input type="date" name="repair-date" id="repair-date" required />
+					</div>
+					<div class="form-control">
+						<label for="customer-name">Customer name</label>
+						<input
+							type="text"
+							name="customer-name"
+							id="customer-name"
+							placeholder="Nguyễn Văn Khoa"
+							required />
+					</div>
+					<div class="form-control">
+						<label for="catalog">Catalog</label>
+						<input
+							type="text"
+							name="catalog"
+							id="catalog"
+							placeholder="Bảo dưỡng định kỳ lần 1"
+							required />
+					</div>
+					<div class="form-control">
+						<label for="car-maker">Car maker</label>
+						<input
+							type="text"
+							name="car-maker"
+							id="car-maker"
+							placeholder="Honda"
+							required />
+					</div>
+					<div class="form-submit">
+						<div>
+							<button id="save" type="submit">Save Car</button>
+							<button type="reset">Reset</button>
+						</div>
+						<a href="./accessory-details.html">Accessory details</a>
+					</div>
+				</form>
+			</main>
+		</div>
+		<footer><i>BASED ON SPRING FRAMEWORK</i></footer>
+		<script src="../js/add-new-car.js"></script>
+	</body>
+</html>

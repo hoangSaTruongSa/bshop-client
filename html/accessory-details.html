@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<title>KShop: Accessory details</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<link rel="stylesheet" href="../css/accessory-details.css" />
+	</head>
+	<body>
+		<header><h1>AUTOMOTIVE REPAIR</h1></header>
+		<div class="container">
+			<aside>
+				<div class="menu">
+					<p><b>MENU:</b></p>
+					<p>
+						<a href="./add-new-car.html">Add a new car</a>
+					</p>
+					<p><a href="./car-management.html">Cars management</a></p>
+				</div>
+			</aside>
+			<div class="vr"></div>
+			<main>
+				<form id="accessory-form">
+					<p><b>ACCESSORY DETAILS:</b></p>
+					<div class="form-control">
+						<label for="id">Id</label>
+						<input type="number" name="id" id="id" disabled />
+					</div>
+					<div class="form-control">
+						<label for="license-plate">License plate</label>
+						<input
+							type="text"
+							name="license-plate"
+							id="license-plate"
+							placeholder="29V7-65366"
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-date">Repair date</label>
+						<input type="date" name="repair-date" id="repair-date" required />
+					</div>
+					<div class="form-control">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" placeholder="Lọc gió" required />
+					</div>
+					<div class="form-control">
+						<label for="price">Price</label>
+						<input type="text" name="price" id="price" placeholder="100.000" required />
+					</div>
+					<div class="form-control">
+						<label for="status-damaged">Status damaged</label>
+						<input
+							type="text"
+							name="status-damaged"
+							id="status-damaged"
+							placeholder="Bị bụi bẩn"
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-status">Repair status</label>
+						<input
+							type="text"
+							name="repair-status"
+							id="repair-status"
+							placeholder="Làm sạch"
+							required />
+					</div>
+					<div class="form-submit">
+						<button id="save" type="submit">Save Accessory</button>
+						<button type="reset">Reset</button>
+					</div>
+				</form>
+				<div class="data">
+					<div class="table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>No <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>License plate <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Repair date <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Name <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Price <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>
+										Status damaged <i class="fa fa-solid fa-sort fa-xs"></i>
+									</th>
+									<th>Repair status <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody id="accessories"></tbody>
+						</table>
+					</div>
+					<div id="loading">
+						<div class="loading-icon"></div>
+					</div>
+					<div class="pagination">
+						<div class="pagination-size">
+							<select title="Số bản ghi mỗi trang" id="size">
+								<option value="10" selected>10</option>
+								<option value="25">25</option>
+								<option value="50">50</option>
+							</select>
+							<span>Record(s) per page.</span>
+						</div>
+						<div class="pagination-controls">
+							<button title="Trang đầu tiên" type="button" id="first-page">
+								<i class="fa-solid fa-angles-left"></i>
+							</button>
+							<button title="Trang trước" type="button" id="prev-page">
+								<i class="fa-solid fa-angle-left"></i>
+							</button>
+							<input
+								title="Trang hiện tại"
+								type="number"
+								name="page"
+								id="page"
+								value="1" />
+							<button title="Trang sau" type="button" id="next-page">
+								<i class="fa-solid fa-angle-right"></i>
+							</button>
+							<button title="Trang cuối cùng" type="button" id="last-page">
+								<i class="fa-solid fa-angles-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer><i>BASED ON SPRING FRAMEWORK</i></footer>
+		<script src="../js/accessory-details.js"></script>
+	</body>
+</html>
