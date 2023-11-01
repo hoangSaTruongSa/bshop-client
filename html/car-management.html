@@ -34,12 +34,7 @@
 					</div>
 					<div class="form-control">
 						<label for="repair-date">Repair date</label>
-						<input
-							type="date"
-							name="repair-date"
-							id="repair-date"
-							disabled
-							required />
+						<input type="date" name="repair-date" id="repair-date" disabled required />
 					</div>
 					<div class="form-control">
 						<label for="customer-name">Customer name</label>
@@ -70,6 +65,7 @@
 					</div>
 					<div class="form-submit">
 						<button id="save" type="submit">Save Car</button>
+						<button type="reset">Reset</button>
 					</div>
 				</form>
 				<div class="data">
@@ -77,31 +73,11 @@
 						<table>
 							<thead>
 								<tr>
-									<th>
-										License plate
-										<i
-											class="fa fa-solid fa-sort fa-xs"></i>
-									</th>
-									<th>
-										Repair date
-										<i
-											class="fa fa-solid fa-sort fa-xs"></i>
-									</th>
-									<th>
-										Customer name
-										<i
-											class="fa fa-solid fa-sort fa-xs"></i>
-									</th>
-									<th>
-										Catalog
-										<i
-											class="fa fa-solid fa-sort fa-xs"></i>
-									</th>
-									<th>
-										Car maker
-										<i
-											class="fa fa-solid fa-sort fa-xs"></i>
-									</th>
+									<th>License plate <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Repair date <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Customer name <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Catalog <i class="fa fa-solid fa-sort fa-xs"></i></th>
+									<th>Car maker <i class="fa fa-solid fa-sort fa-xs"></i></th>
 									<th>Actions</th>
 								</tr>
 							</thead>
@@ -121,16 +97,10 @@
 							<span>Record(s) per page.</span>
 						</div>
 						<div class="pagination-controls">
-							<button
-								title="Trang đầu tiên"
-								type="button"
-								id="first-page">
+							<button title="Trang đầu tiên" type="button" id="first-page">
 								<i class="fa-solid fa-angles-left"></i>
 							</button>
-							<button
-								title="Trang trước"
-								type="button"
-								id="prev-page">
+							<button title="Trang trước" type="button" id="prev-page">
 								<i class="fa-solid fa-angle-left"></i>
 							</button>
 							<input
@@ -139,16 +109,10 @@
 								name="page"
 								id="page"
 								value="1" />
-							<button
-								title="Trang sau"
-								type="button"
-								id="next-page">
+							<button title="Trang sau" type="button" id="next-page">
 								<i class="fa-solid fa-angle-right"></i>
 							</button>
-							<button
-								title="Trang cuối cùng"
-								type="button"
-								id="last-page">
+							<button title="Trang cuối cùng" type="button" id="last-page">
 								<i class="fa-solid fa-angles-right"></i>
 							</button>
 						</div>

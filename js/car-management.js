@@ -91,9 +91,7 @@ async function deleteById(car) {
 			repairDate: car.repairDate
 		})
 	});
-	console.log(
-		`deleteById(${car.licensePlate}, ${car.repairDate}): ${response.ok}`
-	);
+	console.log(`deleteById(${car.licensePlate}, ${car.repairDate}): ${response.ok}`);
 	if (response.ok) await findAll();
 	hideLoading();
 }
