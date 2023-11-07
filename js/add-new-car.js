@@ -25,11 +25,11 @@ async function save() {
 			"Content-Type": "application/json"
 		},
 		body: JSON.stringify({
-			licensePlate: document.getElementById("license-plate").value,
-			repairDate: document.getElementById("repair-date").value,
-			customerName: document.getElementById("customer-name").value,
-			catalog: document.getElementById("catalog").value,
-			carMaker: document.getElementById("car-maker").value
+			licensePlate: formLicensePlate.value,
+			repairDate: formRepairDate.value,
+			customerName: formCustomerName.value,
+			catalog: formCatalog.value,
+			carMaker: formCarMaker.value
 		})
 	});
 	const json = await response.json();
