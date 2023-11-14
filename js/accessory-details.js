@@ -17,6 +17,9 @@ const nextPage = document.getElementById("next-page");
 const lastPage = document.getElementById("last-page");
 const formatter = new Intl.NumberFormat("vi-VN");
 
+const v_username = localStorage.getItem("USERNAME");
+const v_password = localStorage.getItem("PASSWORD");
+
 form.addEventListener("submit", async function (e) {
 	e.preventDefault();
 	await save();
@@ -48,7 +51,8 @@ async function findAll() {
 		method: "GET",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		}
 	});
 	const page = await response.json();
@@ -97,7 +101,8 @@ async function deleteById(id) {
 		method: "DELETE",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		}
 	});
 	console.log(`deleteById(${id}): ${response.ok}`);

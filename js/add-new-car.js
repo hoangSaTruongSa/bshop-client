@@ -6,6 +6,9 @@ const formCatalog = document.getElementById("catalog");
 const formCarMaker = document.getElementById("car-maker");
 const btnSave = document.getElementById("save");
 
+const v_username = localStorage.getItem("USERNAME");
+const v_password = localStorage.getItem("PASSWORD");
+
 form.addEventListener("submit", async e => {
 	e.preventDefault();
 	await save();
@@ -22,7 +25,8 @@ async function save() {
 		method: "POST",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		},
 		body: JSON.stringify({
 			licensePlate: formLicensePlate.value,

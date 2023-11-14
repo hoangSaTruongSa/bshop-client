@@ -15,6 +15,11 @@ const prevPage = document.getElementById("prev-page");
 const nextPage = document.getElementById("next-page");
 const lastPage = document.getElementById("last-page");
 
+const v_username = localStorage.getItem("USERNAME");
+const v_password = localStorage.getItem("PASSWORD");
+
+// console.log(v_username+ "    "+ v_password);
+
 form.addEventListener("submit", async function (e) {
 	e.preventDefault();
 	await save();
@@ -41,7 +46,8 @@ async function findAll() {
 		method: "GET",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		}
 	});
 	const page = await response.json();
@@ -51,6 +57,29 @@ async function findAll() {
 	showCars(cars);
 	updatePagination(page);
 	hideLoading();
+
+	$.ajax({
+        url: url,
+        type: 'GET',
+        // contentType: "application/json",
+        dataType: 'json', // datatype return
+        // beforeSend: function (xhr) {
+        //     xhr.setRequestHeader("Authorization", "Basic " + btoa(v_username + ":" + v_password));
+        // },
+        success: function (data, textStatus, xhr) {
+            // success
+            accounts = data.content;
+            fillAccountToTable();
+            fillAccountPaging(data.numberOfElements, data.totalPages);
+            fillAccountSorting();
+        },
+        error(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        }
+    });
+
 }
 
 function showCars(cars) {
@@ -84,8 +113,12 @@ async function deleteById(car) {
 		method: "DELETE",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		},
+		beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(v_username + ":" + v_password));
+        },
 		body: JSON.stringify({
 			licensePlate: car.licensePlate,
 			repairDate: car.repairDate
@@ -144,8 +177,12 @@ async function save() {
 		method: "PUT",
 		headers: {
 			"Accept-Language": "vi",
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": "Basic " + btoa(v_username + ":" + v_password)
 		},
+		beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(v_username + ":" + v_password));
+        },
 		body: JSON.stringify({
 			licensePlate: formLicensePlate.value,
 			repairDate: formRepairDate.value,

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/loginform.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="">
+            <div class="imgcontainer">
+                <img src="../../asset/avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" id="username" value=""
+                    onkeyup="$('#incorrect-mess').css('display', 'none')" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="password" value=""
+                    onkeyup="$('#incorrect-mess').css('display', 'none')" required>
+
+                <div id="incorrect-mess">Login Failed: Your username or password is incorrect</div>
+                <input type="button" value="Login" onclick="login()" id="login-btn"></input>
+                <label>
+                    <input type="checkbox" id="rememberMe" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" style='visibility:hidden' class="cancelbtn"></button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!-- import script -->
+    <script src="../../js/login.js"></script>
+    <script src="../../js/storage.js"></script>
+
+</body>
+
+</html>
